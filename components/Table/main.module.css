@@ -1,0 +1,32 @@
+.container {
+  background-color: rgba(233, 233, 233, 0.6);
+  border: 2px solid rgba(0, 219, 135, 0.8);
+  border-collapse: collapse;
+  border-radius: 8px;
+  color: rgb(20, 20, 20);
+  padding: 1em;
+  margin: auto;
+  min-width: 30em;
+  width: 82%;
+}
+
+.containerStructure{
+  width: 100%;
+}
+
+.theadContent {
+  border: 1px solid rgba(0, 219, 135, 0.8);
+  border-collapse: collapse;
+  font-family: Ubuntu;
+}
+
+.rowContent {
+  border: 1px solid rgba(0, 219, 135, 0.8);
+  border-collapse: collapse;
+  font-family: Ubuntu;
+  font-size: 15px;
+  padding: 10px 4px;
+  text-align: center;
+  width: 16%;
+  word-break: break-all;
+}

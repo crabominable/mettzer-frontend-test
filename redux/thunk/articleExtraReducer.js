@@ -14,6 +14,7 @@ export const extraReducers = (builder) => {
         const finalData = [];
         action.payload.body.data.forEach((element) => {
           const parseElement = {
+            id: element._source.id,
             authors: element._source.authors,
             type: element._type,
             title: element._source.title,

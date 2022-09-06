@@ -1,0 +1,33 @@
+@import url("https://use.typekit.net/tkq6qfa.css");
+
+.container {
+  align-items: center;
+  background-color: rgba(0, 219, 135, 0.6);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  height: 6em;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 4em;
+  margin-top: 1em;
+  max-width: 48em;
+  width: 80%;
+}
+
+.title {
+  color: rgb(20, 20, 20);
+  font-family: poppins, sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.titleText {
+  color: rgb(20, 20, 20);
+  font-family: poppins, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 4px;
+}
