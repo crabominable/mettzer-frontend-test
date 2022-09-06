@@ -1,22 +1,22 @@
-export const getAllFavoriteArticles = () => JSON.parse(localStorage.getItem('favoriteArticles'));
+export const getAllFavoriteArticles = () => JSON.parse(localStorage.getItem('favoriteArticles'))
 
 export const setEmptyFavoriteArticles = () => {
-  const favoriteArticles = [];
-  localStorage.setItem('favoriteArticles', JSON.stringify(favoriteArticles));
-};
+  const favoriteArticles = []
+  localStorage.setItem('favoriteArticles', JSON.stringify(favoriteArticles))
+}
 
 export const checkFavoriteArticle = (id) => {
-  const result = JSON.parse(localStorage.getItem('favoriteArticles'));
-  return (result.some((item) => item.id === id));
-};
+  const result = JSON.parse(localStorage.getItem('favoriteArticles'))
+  return (result.some((item) => item.id === id))
+}
 
 export const setFavoriteArticle = (data) => {
-  const result = JSON.parse(localStorage.getItem('favoriteArticles'));
-  const check = result.some((item) => item.id === data.id);
-  const favoriteArticle = JSON.parse(localStorage.getItem('favoriteArticles'));
-  let newFavoriteArticle = [];
+  const result = JSON.parse(localStorage.getItem('favoriteArticles'))
+  const check = result.some((item) => item.id === data.id)
+  const favoriteArticle = JSON.parse(localStorage.getItem('favoriteArticles'))
+  let newFavoriteArticle = []
   if (check) {
-    newFavoriteArticle = favoriteArticle.filter((item) => item.id !== data.id);
+    newFavoriteArticle = favoriteArticle.filter((item) => item.id !== data.id)
   } else {
     newFavoriteArticle = [
       ...favoriteArticle,
@@ -27,17 +27,17 @@ export const setFavoriteArticle = (data) => {
         title: data.title,
         description: data.description,
         urls: data.urls
-      },
-    ];
+      }
+    ]
   }
-  localStorage.setItem('favoriteArticles', JSON.stringify(newFavoriteArticle));
-  return checkFavoriteArticle(data.id);
-};
+  localStorage.setItem('favoriteArticles', JSON.stringify(newFavoriteArticle))
+  return checkFavoriteArticle(data.id)
+}
 
 export const verifyAndSetArticles = ({ favoriteArticles, setCheckFavorite, id }) => {
   if (!favoriteArticles) {
-    setEmptyFavoriteArticles();
+    setEmptyFavoriteArticles()
   } else {
-    setCheckFavorite(checkFavoriteArticle(id));
+    setCheckFavorite(checkFavoriteArticle(id))
   }
-};
+}

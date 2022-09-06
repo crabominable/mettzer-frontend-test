@@ -1,9 +1,11 @@
+import React from 'react'
+
 import {
   Header,
-  Table,
+  Table
 } from '../components'
 
-export default function Favorite() {
+export default function Favorite () {
   return (
     <div>
       <Header />

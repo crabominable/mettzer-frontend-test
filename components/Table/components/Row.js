@@ -1,36 +1,36 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faHeart as unfavorite } from '@fortawesome/free-regular-svg-icons';
-import {faHeart as favorited } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart as unfavorite } from '@fortawesome/free-regular-svg-icons'
+import { faHeart as favorited } from '@fortawesome/free-solid-svg-icons'
 
-import { 
+import {
   getAllFavoriteArticles,
   checkFavoriteArticle,
   setFavoriteArticle,
-  verifyAndSetArticles,
-} from '../../../storage';
+  verifyAndSetArticles
+} from '../../../storage'
 
-import styles from '../main.module.css';
+import styles from '../main.module.css'
 
-export default function Row({ data }) {
-  const [checkFavorite, setCheckFavorite] = useState(false);
+export default function Row ({ data }) {
+  const [checkFavorite, setCheckFavorite] = useState(false)
 
   useEffect(() => {
-    const favoriteArticles = getAllFavoriteArticles();
+    const favoriteArticles = getAllFavoriteArticles()
 
     const params = {
       favoriteArticles,
       setCheckFavorite,
-      id: data.id,
-    };
+      id: data.id
+    }
 
-    verifyAndSetArticles(params);
+    verifyAndSetArticles(params)
   }, [])
 
-  function setFavorite() {
-    setFavoriteArticle(data);
-    setCheckFavorite(checkFavoriteArticle(data.id));
+  function setFavorite () {
+    setFavoriteArticle(data)
+    setCheckFavorite(checkFavoriteArticle(data.id))
   };
 
   return (
@@ -44,3 +44,16 @@ export default function Row({ data }) {
     </tr>
   )
 }
+
+Row.propTypes = {
+  date: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  products: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    quantity: PropTypes.number.isRequired,
+    value: PropTypes.string.isRequired,
+  }).isRequired).isRequired,
+  status: PropTypes.string.isRequired,
+  totalPrice: PropTypes.string.isRequired,
+};

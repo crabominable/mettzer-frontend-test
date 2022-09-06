@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
-import { extraReducers } from './thunk/articleExtraReducer';
+import { extraReducers } from './thunk/articleExtraReducer'
 
 const initialState = {
   articles: [],
-  loading: 'idle',
-};
+  loading: 'idle'
+}
 
 export const ArticleSlice = createSlice({
   name: 'ArticleSlice',
@@ -13,12 +13,12 @@ export const ArticleSlice = createSlice({
   extraReducers,
   reducers: {
     setArticles: (state, action) => {
-      state.articles = action.payload;
-    },
-  },
-});
+      state.articles = action.payload
+    }
+  }
+})
 
 // Action creators are generated for each case reducer function
-export const { setArticles } = ArticleSlice.actions;
+export const { setArticles } = ArticleSlice.actions
 
-export default ArticleSlice.reducer;
+export default ArticleSlice.reducer

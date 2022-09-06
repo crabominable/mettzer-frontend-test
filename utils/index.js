@@ -1,3 +1,3 @@
 import ArticlesRequests from './requests/articlesRequests'
 
-export default ArticlesRequests;
+export default ArticlesRequests

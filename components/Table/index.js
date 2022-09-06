@@ -1,18 +1,18 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { getArticles } from '../../redux/thunk/articleExtraReducer';
-import Row from './components/Row';
+import { getArticles } from '../../redux/thunk/articleExtraReducer'
+import Row from './components/Row'
 
-import styles from './main.module.css';
+import styles from './main.module.css'
 
-export default function Table() {
-  const dispatch = useDispatch();
-  const { articles } = useSelector((state) => state.ArticleSlice);
+export default function Table () {
+  const dispatch = useDispatch()
+  const { articles } = useSelector((state) => state.ArticleSlice)
 
   useEffect(() => {
-    dispatch(getArticles());
-  }, []);
+    dispatch(getArticles())
+  }, [])
 
   return (
     <table className={styles.container}>
@@ -27,9 +27,11 @@ export default function Table() {
         </tr>
       </thead>
       <tbody className={styles.containerStructure}>
-        { !articles ? 'loading' : articles.map((item, index) => (
+        { !articles
+          ? 'loading'
+          : articles.map((item, index) => (
           <Row key={index} data={item} />
-        )) }
+          )) }
       </tbody>
     </table>
   )

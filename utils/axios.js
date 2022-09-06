@@ -1,23 +1,23 @@
-import axios from 'axios';
+import axios from 'axios'
 
 class AxiosHTTP {
   Request = async (data) => {
-    let axiosResponse;
+    let axiosResponse
 
     try {
       axiosResponse = await axios.request({
         url: data.url,
         method: data.method,
-        data: data.body,
-      });
+        data: data.body
+      })
     } catch (error) {
-      axiosResponse = error.response;
+      axiosResponse = error.response
     }
     return {
       statusCode: axiosResponse.status,
-      body: axiosResponse.data,
-    };
+      body: axiosResponse.data
+    }
   }
 }
 
-export default (new AxiosHTTP());
+export default (new AxiosHTTP())

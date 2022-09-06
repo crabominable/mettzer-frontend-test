@@ -1,9 +1,11 @@
+import React from 'react'
+
 import {
   Header,
-  Table,
+  Table
 } from '../components'
 
-export default function Home() {
+export default function Home () {
   return (
     <div>
       <Header />
