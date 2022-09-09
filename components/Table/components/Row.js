@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart as unfavorite } from '@fortawesome/free-regular-svg-icons'
@@ -29,31 +30,33 @@ export default function Row ({ data }) {
   }, [])
 
   function setFavorite () {
+    if (checkFavorite) {
+      setFavoriteArticle(data)
+      return setCheckFavorite(false)
+    }
     setFavoriteArticle(data)
     setCheckFavorite(checkFavoriteArticle(data.id))
-  };
+  }
 
   return (
-    <tr>
+    <tr className={styles.trContent}>
       <td className={styles.rowContent}>{data.authors}</td>
       <td className={styles.rowContent}>{data.type}</td>
       <td className={styles.rowContent}>{data.title}</td>
       <td className={styles.rowContent}>{data.description}</td>
       <td className={styles.rowContent}><a href={`${data.urls[0]}`}>{data.urls}</a></td>
-      <td className={styles.rowContent}>{ !checkFavorite ? <a onClick={ () => setFavorite() }><FontAwesomeIcon icon={unfavorite} /></a> : <a onClick={ () => setFavorite() }><FontAwesomeIcon icon={favorited} /></a> }</td>
+      <td className={styles.rowContent}>{ !checkFavoriteArticle(data.id) ? <a onClick={ () => setFavorite() }><FontAwesomeIcon icon={unfavorite} /></a> : <a onClick={ () => setFavorite() }><FontAwesomeIcon icon={favorited} /></a> }</td>
     </tr>
   )
 }
 
 Row.propTypes = {
-  date: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  products: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    quantity: PropTypes.number.isRequired,
-    value: PropTypes.string.isRequired,
-  }).isRequired).isRequired,
-  status: PropTypes.string.isRequired,
-  totalPrice: PropTypes.string.isRequired,
-};
+  data: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    authors: PropTypes.arrayOf(PropTypes.string).isRequired,
+    type: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    urls: PropTypes.arrayOf(PropTypes.string)
+  }).isRequired
+}

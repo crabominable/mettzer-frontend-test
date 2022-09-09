@@ -1,0 +1,60 @@
+.container {
+  align-items: center;
+  color: black !important;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  height: 4em;
+  width: 100%;
+}
+
+.ulContainer {
+  align-items: center;
+  color: black !important;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  margin-left: 0; 
+  padding-left: 0;
+  width: 20%;
+}
+
+.liContainer {
+  align-items: center;
+  display: flex;
+  color: black !important;
+  list-style: none;
+  margin-left: 0; 
+  padding-left: 0;
+}
+
+.buttonContainer {
+  background-color: rgba(226, 226, 226, 0.6);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px 16px;
+  color: black !important;
+  transition: 0.2s;
+}
+
+.buttonContainer:hover {
+  background-color: rgba(182, 182, 182, 0.6);
+  transition: 0.2s;
+}
+
+.buttonActualContainer {
+  background-color: rgba(0, 219, 135, 0.6);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px 16px;
+  color: black !important;
+  transition: 0.2s;
+}
+
+.buttonActualContainer:hover {
+  background-color: rgba(0, 182, 112, 0.6);
+  transition: 0.2s;
+}

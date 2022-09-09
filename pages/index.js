@@ -2,7 +2,8 @@ import React from 'react'
 
 import {
   Header,
-  Table
+  Table,
+  Pagination
 } from '../components'
 
 export default function Home () {
@@ -10,6 +11,7 @@ export default function Home () {
     <div>
       <Header />
       <Table />
+      <Pagination />
     </div>
   )
 }

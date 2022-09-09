@@ -11,6 +11,15 @@ class ArticlesRequests {
 
     return response
   }
+
+  articlesPaginedRequest = async (page) => {
+    const response = await AxiosHTTP.Request({
+      url: `https://core.ac.uk:443/api-v2/search/articles?page=${page}&pageSize=10&apiKey=JswoejUrL6xKtBQOEfamIN9V1kl3HhvD`,
+      method: 'GET'
+    })
+
+    return response
+  }
 }
 
 export default (new ArticlesRequests())

@@ -1,4 +1,36 @@
-export const getAllFavoriteArticles = () => JSON.parse(localStorage.getItem('favoriteArticles'))
+export const getAllFavoriteArticles = () => {
+  const articles = JSON.parse(localStorage.getItem('favoriteArticles'))
+  const filteredArticles = articles.filter((element, index) => index + 1 < 11 ? element : null)
+  return filteredArticles
+}
+
+export const getAllFavoritePaginedArticles = (page) => {
+  const articles = JSON.parse(localStorage.getItem('favoriteArticles'))
+  const filteredArticles = []
+  articles.forEach((element, index) => {
+    if (index < 11) {
+      let parseObj = {}
+      parseObj = {
+        ...element
+      }
+      return filteredArticles.push(parseObj)
+    }
+    if (parseInt(page) !== 1) {
+      let parseObj = {}
+      parseObj = {
+        ...element
+      }
+      return filteredArticles.push(parseObj)
+    }
+  })
+  let filteredPageArticles = []
+  if (filteredArticles.length > 10) {
+    const parsePage = parseInt(page) - 1
+    const parseFinalPage = parsePage.toString()
+    filteredPageArticles = filteredArticles.splice(parseInt(parseFinalPage + 0), parseInt(parseFinalPage + 9))
+  }
+  return filteredPageArticles
+}
 
 export const setEmptyFavoriteArticles = () => {
   const favoriteArticles = []

@@ -4,7 +4,8 @@ import { extraReducers } from './thunk/articleExtraReducer'
 
 const initialState = {
   articles: [],
-  loading: 'idle'
+  loading: 'idle',
+  localStoragePagination: 1
 }
 
 export const ArticleSlice = createSlice({
@@ -14,11 +15,14 @@ export const ArticleSlice = createSlice({
   reducers: {
     setArticles: (state, action) => {
       state.articles = action.payload
+    },
+    setLocalStoragePagination: (state, action) => {
+      state.localStoragePagination = action.payload
     }
   }
 })
 
 // Action creators are generated for each case reducer function
-export const { setArticles } = ArticleSlice.actions
+export const { setArticles, setLocalStoragePagination } = ArticleSlice.actions
 
 export default ArticleSlice.reducer
