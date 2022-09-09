@@ -1,6 +1,6 @@
-## METTZER ARTICLES FRONTEND TEST
+## Mettzer Articles Frontend Test
 
-### Frontend:
+### Desenvolvimento:
 
 Usei o framework Next.js para gerar o projeto react, usando o router do mesmo e usando os módulos css. Redux toolkit para o gerenciamento de estado, axios para o gerenciamento das requisições e armazenei os favoritos na local storage.
 
@@ -11,7 +11,7 @@ Tentei fazer um deploy no Heroku mas também sem sucesso, já que um erro na bui
 
 ### Getting Started
 
-# First, run the development server:
+### First, run the development server:
 
 ```bash
 npm run dev
@@ -19,13 +19,13 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# To run the eslint:
+### To run the eslint:
 
 ```bash
 npm run lint
 ```
 
-# To run the tests:
+### To run the tests:
 
 ```bash
 npm run test
