@@ -23,11 +23,41 @@
   text-align: center;
 }
 
-.titleText {
-  color: rgb(20, 20, 20);
-  font-family: poppins, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 4px;
+.linkButton {
+  color: rgb(122, 122, 122);
+  border-radius: 10px;
+  padding: 4px 12px;
+  text-decoration: none;
+}
+
+.linkButtonActive {
+  background-color: rgba(0, 196, 0, 0.795);
+  border-radius: 10px;
+  color: rgb(14, 14, 14);
+  padding: 4px 12px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.linkButton:hover {
+  background-color: rgba(0, 196, 0, 0.795);
+  color: rgb(122, 122, 122);
+  padding: 4px 12px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.linkButtonActive:hover {
+  background-color: rgba(0, 196, 0, 0.795);
+  border-radius: 10px;
+  color: rgb(14, 14, 14);
+  padding: 4px 12px;
+  text-decoration: none;
+}
+
+.containerLinks {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 12em;
 }

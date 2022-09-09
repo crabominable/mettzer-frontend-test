@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 
 import {
   Header,
@@ -8,10 +9,13 @@ import {
 
 export default function Home () {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Mettzer Articles</title>
+      </Head>
       <Header />
       <Table />
       <Pagination />
-    </div>
+    </>
   )
 }

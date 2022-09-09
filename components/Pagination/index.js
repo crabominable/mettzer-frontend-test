@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 
-import { getPaginedArticles } from '../../redux/thunk/articleExtraReducer'
-import { getAllFavoritePaginedArticles } from '../../storage'
-import { setArticles } from '../../redux/articleSlice'
+import { getPaginedArticles } from '../../redux-thunk-slices/thunk/articleExtraReducer'
+import { getAllFavoritePaginedArticles } from '../../local-storage'
+import { setArticles } from '../../redux-thunk-slices/articleSlice'
 
 import styles from './main.module.css'
 
@@ -33,7 +33,6 @@ export default function Pagination () {
     if (router.pathname === '/favorite') {
       if (page > 0 && checkPage) {
         const favoriteStorageArticles = getAllFavoritePaginedArticles(page)
-        // console.log(favoriteStorageArticles)
         dispatch(setArticles(favoriteStorageArticles))
       }
       if (page === 1) {

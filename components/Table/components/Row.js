@@ -10,7 +10,7 @@ import {
   checkFavoriteArticle,
   setFavoriteArticle,
   verifyAndSetArticles
-} from '../../../storage'
+} from '../../../local-storage'
 
 import styles from '../main.module.css'
 
@@ -45,7 +45,7 @@ export default function Row ({ data }) {
       <td className={styles.rowContent}>{data.title}</td>
       <td className={styles.rowContent}>{data.description}</td>
       <td className={styles.rowContent}><a href={`${data.urls[0]}`}>{data.urls}</a></td>
-      <td className={styles.rowContent}>{ !checkFavoriteArticle(data.id) ? <a onClick={ () => setFavorite() }><FontAwesomeIcon icon={unfavorite} /></a> : <a onClick={ () => setFavorite() }><FontAwesomeIcon icon={favorited} /></a> }</td>
+      <td className={styles.rowContent}>{ !checkFavoriteArticle(data.id) ? <a onClick={ () => setFavorite() }><FontAwesomeIcon className='fa-2x' icon={unfavorite} /></a> : <a onClick={ () => setFavorite() }><FontAwesomeIcon className='fa-2x' icon={favorited} /></a> }</td>
     </tr>
   )
 }

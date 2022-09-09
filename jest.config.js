@@ -16,6 +16,11 @@ module.exports = {
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
 
+  moduleNameMapper: {
+    "\\.(css|less|sass|scss)$": "<rootDir>/components",
+    "\\.(css|less|sass|scss)$": "<rootDir>/pages",
+  },
+
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
 

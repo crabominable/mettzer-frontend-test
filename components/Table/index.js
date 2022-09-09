@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 
-import { getArticles } from '../../redux/thunk/articleExtraReducer'
-import { setArticles } from '../../redux/articleSlice'
+import { getArticles } from '../../redux-thunk-slices/thunk/articleExtraReducer'
+import { setArticles } from '../../redux-thunk-slices/articleSlice'
 import Row from './components/Row'
-import { getAllFavoriteArticles } from '../../storage'
+import { getAllFavoriteArticles } from '../../local-storage'
 
 import styles from './main.module.css'
 
