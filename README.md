@@ -9,7 +9,7 @@ Usei o framework Next.js para gerar o projeto react, usando o router do mesmo e 
 Não consegui executar com sucesso os testes porque o router.pathname da erro quando o jest faz a chamada.
 Tentei fazer um deploy no Heroku mas também sem sucesso, já que um erro na build da store do redux impede, e não achei uma solução por enquanto.
 
-### Getting Started
+## Getting Started
 
 ### First, run the development server:
 
